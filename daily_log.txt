@@ -1,0 +1,6 @@
+2025-08-04
+- Set up Spring Boot project with Initializr
+- Configured MongoDB Atlas with MONGODB_URI env variable
+- Fixed 401 error with SecurityConfig
+- Tested /api/test/users endpoint with Postman
+- Pushed to GitHub with commit "Set up basic Spring Boot project with MongoDB API testing"
