@@ -1,4 +1,4 @@
-2025-08-04
+4th August 2025
 - Set up Spring Boot project with Initializr
 - Configured MongoDB Atlas with MONGODB_URI env variable
 - Fixed 401 error with SecurityConfig
