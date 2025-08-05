@@ -4,3 +4,9 @@
 - Fixed 401 error with SecurityConfig
 - Tested /api/test/users endpoint with Postman
 - Pushed to GitHub with commit "Set up basic Spring Boot project with MongoDB API testing"
+
+5th August 2025
+- Added @EnableMongoRepositories and PasswordEncoder bean to SocialMediaAppApplication
+- Defined User entity with unique email/username and Base64 profilePhoto
+- Tested with Postman, including image input and password hashing
+- Verified data in MongoDB Atlas
