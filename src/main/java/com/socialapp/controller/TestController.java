@@ -3,6 +3,7 @@ package com.socialapp.controller;
 import com.socialapp.model.User;
 import com.socialapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public class TestController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @GetMapping("/users")
     public List<User> getUsers() {
         return userRepository.findAll();
@@ -21,6 +25,7 @@ public class TestController {
 
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
