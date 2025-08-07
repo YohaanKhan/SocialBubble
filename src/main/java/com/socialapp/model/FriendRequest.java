@@ -43,7 +43,7 @@ public class FriendRequest {
      * The timestamp indicating when the friend request was sent.
      * Defaults to the current time upon object creation.
      */
-    private LocalDateTime sentAt =  LocalDateTime.now();
+    private LocalDateTime createdAt =  LocalDateTime.now();
 
     /**
      * Default no-argument constructor.
