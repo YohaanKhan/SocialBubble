@@ -10,3 +10,8 @@
 - Defined User entity with unique email/username and Base64 profilePhoto
 - Tested with Postman, including image input and password hashing
 - Verified data in MongoDB Atlas
+
+6th August 2025
+- Updated `TestController.java` 
+- Integrated repositories (`UserRepository`, `FriendRequestRepository`, `PostRepository`, `MessageRepository`) for CRUD operations.
+- Defined GET and POST endpoints for `User`, `FriendRequest`, `Post`, and `Message`.
