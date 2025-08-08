@@ -2,6 +2,7 @@ package com.socialapp.controller;
 
 import com.socialapp.model.User;
 import com.socialapp.repository.UserRepository;
+import com.socialapp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,10 +17,12 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final UserService userService;
 
     public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userService = new UserService(userRepository, passwordEncoder);
     }
 
     /**
@@ -61,5 +64,17 @@ public class UserController {
     public User getUserByEmail(@PathVariable String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found with email: " + email));
+    }
+
+    /**
+     * Allows the {@code userId} to accept a friend request from {@code friendId}
+     * @param userId receivers Id
+     * @param friendId senders Id
+     * @return if the friend request was successfully accepted or not
+     */
+    @PostMapping("/users/accept-friend-request")
+    public String acceptFriendRequest(@RequestParam String userId, @RequestParam String friendId) {
+        userService.acceptFriendRequest(userId, friendId);
+        return "Friend request accepted";
     }
 }
