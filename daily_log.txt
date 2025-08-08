@@ -8,6 +8,7 @@
 5th August 2025
 - Added @EnableMongoRepositories and PasswordEncoder bean to SocialMediaAppApplication
 - Defined User entity with unique email/username and Base64 profilePhoto
+- Createad the entity models for `User`, `FriendRequest`, `Post`, and `Message`.
 - Tested with Postman, including image input and password hashing
 - Verified data in MongoDB Atlas
 
