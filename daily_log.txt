@@ -15,3 +15,9 @@
 - Updated `TestController.java` 
 - Integrated repositories (`UserRepository`, `FriendRequestRepository`, `PostRepository`, `MessageRepository`) for CRUD operations.
 - Defined GET and POST endpoints for `User`, `FriendRequest`, `Post`, and `Message`.
+
+7th August 2025
+- Simplified Javadoc comments in TestController to reduce redundancy while retaining key information.
+- Refactored the TestController Code
+- Completed testing of all endpoints (User, Post, FriendRequest, Message) with Postman, fixing a URL error.
+- Verified data persistence in MongoDB Atlas collections.
