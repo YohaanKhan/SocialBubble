@@ -1,5 +1,7 @@
 package com.socialapp.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -27,11 +29,14 @@ public class Post {
     /**
      * The title of the post, contains a one-liner headline of the post.
      */
+    @NotBlank(message = "The title cannot be blank.")
     private String title;
 
     /**
      * The content of the post, describes in-depth what the post is about.
      */
+    @NotBlank(message = "The content cannot be blank.")
+    @Size(max = 1000, message = "Content must not exceed 1000 characters.")
     private String content;
 
     /**
@@ -43,6 +48,7 @@ public class Post {
     /**
      * A reference to the user who posted.
      */
+    @NotBlank(message = "The author Id cannot be blank.")
     private String authorId;
 
     /**

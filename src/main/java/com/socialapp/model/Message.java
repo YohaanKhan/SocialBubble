@@ -1,5 +1,6 @@
 package com.socialapp.model;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -26,16 +27,19 @@ public class Message {
     /**
      * The unique identifier of the user who is sending the message.
      */
+    @NotBlank(message = "The sender Id cannot be blank.")
     private String senderId;
 
     /**
      * The unique identifier of the user who is receiving the message.
      */
+    @NotBlank(message = "The receiver Id cannot be blank.")
     private String receiverId;
 
     /**
      * It contains the message content.
      */
+    @NotBlank(message = "The content cannot be empty.")
     private String content;
 
     /**

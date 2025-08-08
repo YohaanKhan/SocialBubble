@@ -1,11 +1,15 @@
 package com.socialapp.model;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +33,8 @@ public class User {
      * The user's email address. It is indexed and must be unique across all users.
      * Used for login and notifications.
      */
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
     @Indexed(unique = true)
     private String email;
 
@@ -36,6 +42,8 @@ public class User {
      * The user's public username. It is indexed and must be unique.
      * Used for mentions, profile URLs, and finding other users.
      */
+    @NotBlank(message = "Username is required")
+    @Size(min = 3, max = 10, message = "Username must be 3-10 characters")
     @Indexed(unique = true)
     private String username;
 
@@ -43,11 +51,14 @@ public class User {
      * The user's hashed password. This field should never store a plain-text password.
      * It is intended to be encoded using a strong hashing algorithm like BCrypt.
      */
+    @NotBlank(message = "Password is required.")
+    @Size(min = 6, message = "Password needs to be at least 6 characters long.")
     private String password;
 
     /**
      * The user's public display name (e.g., "Gojo"). Can be non-unique.
      */
+    @NotBlank(message = "Name is required.")
     private String name;
 
     /**
@@ -76,7 +87,7 @@ public class User {
      * A list of user IDs representing the user's friends or connections,
      * enabling the creation of a social graph.
      */
-    private List<String> friends;
+    private List<String> friends = new ArrayList<>();
 
     /**
      * Default no-argument constructor.

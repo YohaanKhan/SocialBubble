@@ -1,5 +1,7 @@
 package com.socialapp.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -26,18 +28,22 @@ public class FriendRequest {
     /**
      * The unique identifier of the user who is sending the friend request.
      */
+    @NotBlank(message = "The sender Id cannot be blank.")
     private String senderId;
 
     /**
      * The unique identifier of the user who is receiving the friend request.
      */
+    @NotBlank(message = "The receiver Id cannot be blank.")
     private String receiverId;
 
     /**
      * The indicator of the current status of the request.
      * It can take the values : {@code PENDING } , {@code ACCEPTED}, {@code REJECTED}
+     * Default Value is {@code PENDING }
      */
-    private Status status;
+    @NotNull(message = "The status cannot be null")
+    private Status status =  Status.PENDING;
 
     /**
      * The timestamp indicating when the friend request was sent.
