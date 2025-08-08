@@ -21,3 +21,9 @@
 - Refactored the TestController Code
 - Completed testing of all endpoints (User, Post, FriendRequest, Message) with Postman, fixing a URL error.
 - Verified data persistence in MongoDB Atlas collections.
+
+8th August 2025
+- Divided the test controller into domain-specific controllers
+- Added validation to User, FriendRequest, Post, and Message entities.
+- Implemented GlobalExceptionHandler for errors.
+- Started UserService with saveUser and acceptFriendRequest.
