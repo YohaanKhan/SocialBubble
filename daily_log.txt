@@ -29,7 +29,7 @@
 - Implemented GlobalExceptionHandler for errors.
 - Started UserService with saveUser and acceptFriendRequest.
 
-## August 9, 2025
+9th August 2025
 - Implemented PostService with addLike and addComment methods.
 - Implemented FriendRequestService with sendFriendRequest and rejectFriendRequest methods.
 - Implemented MessageService with sendMessage and markAsRead methods.
