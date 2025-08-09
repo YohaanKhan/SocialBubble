@@ -5,6 +5,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
+/**
+ * It handles CRUD logic for Message Entity.
+ */
 public interface MessageRepository extends MongoRepository<Message, String> {
     List<Message> findBySenderIdAndReceiverId(String senderId, String receiverId);
     List<Message> findByReceiverIdAndIsReadFalse(String receiverId);

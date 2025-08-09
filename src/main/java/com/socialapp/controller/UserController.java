@@ -11,6 +11,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/**
+ * REST controller for managing user-related operations.
+ * <p>
+ * This controller provides public endpoints for creating, retrieving,
+ * and managing user profiles.
+ */
 @RestController
 @RequestMapping("/api/test")
 public class UserController {

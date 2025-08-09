@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,14 +61,14 @@ public class Post {
     /**
      * A list of user IDs representing the users who liked the post.
      */
-    private List<String> likes;
+    private List<String> likes =  new ArrayList<>();
 
     /** A list of comments made on this post.
      * <p>
      * This list is to be embedded directly within the Post document in
      * MongoDB, representing a one-to-many relationship.
      */
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
 
     /**
      * Default no-argument constructor.
