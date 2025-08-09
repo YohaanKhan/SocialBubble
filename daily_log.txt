@@ -28,3 +28,10 @@
 - Added validation to User, FriendRequest, Post, and Message entities.
 - Implemented GlobalExceptionHandler for errors.
 - Started UserService with saveUser and acceptFriendRequest.
+
+## August 9, 2025
+- Implemented PostService with addLike and addComment methods.
+- Implemented FriendRequestService with sendFriendRequest and rejectFriendRequest methods.
+- Implemented MessageService with sendMessage and markAsRead methods.
+- Updated FriendRequestController and MessageController to use their respective services.
+- Refactored the code and added comments.
