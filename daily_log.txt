@@ -35,3 +35,6 @@
 - Implemented MessageService with sendMessage and markAsRead methods.
 - Updated FriendRequestController and MessageController to use their respective services.
 - Refactored the code and added comments.
+
+10th August 2025
+- Tested with Postman
